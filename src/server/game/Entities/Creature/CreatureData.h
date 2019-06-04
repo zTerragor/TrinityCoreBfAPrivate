@@ -586,7 +586,7 @@ struct CreatureAddon
 // Vendors
 struct VendorItem
 {
-    VendorItem() : item(0), maxcount(0), incrtime(0), ExtendedCost(0), OverrideGoldCost(-1), Type(0), PlayerConditionId(0), IgnoreFiltering(false), Context(0) { }
+    VendorItem() : item(0), maxcount(0), incrtime(0), ExtendedCost(0), OverrideGoldCost(-1), Type(0), PlayerConditionId(0), Context(0), IgnoreFiltering(false) { }
 
     uint32 item;
     uint32 maxcount;                                        // 0 for infinity item amount
