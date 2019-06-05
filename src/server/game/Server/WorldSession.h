@@ -75,7 +75,7 @@ namespace BattlePay
 {
     struct Product;
     struct Purchase;
-    enum Error;
+    enum Error : uint16;
 }
 
 namespace WorldPackets

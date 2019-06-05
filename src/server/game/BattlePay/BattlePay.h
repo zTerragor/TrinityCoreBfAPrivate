@@ -207,7 +207,7 @@ namespace BattlePay
         LOG_CHARGEBACK_INVESTIGATION_FEE = 54,
     };
 
-    enum Error
+    enum Error : uint16
     {
         SHOP_ERROR_TRY_AGAIN            = 0,
         PURCHASE_DENIED                 = 1,
