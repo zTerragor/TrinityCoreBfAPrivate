@@ -526,8 +526,6 @@ void SpellCastTargets::OutDebug() const
         TC_LOG_DEBUG("spells", "String: %s", m_strTarget.c_str());
     TC_LOG_DEBUG("spells", "speed: %f", m_speed);
     TC_LOG_DEBUG("spells", "pitch: %f", m_pitch);
-    TC_LOG_DEBUG("spells", "orientation: %f", m_orientation);
-    TC_LOG_DEBUG("spells", "mapId: %u", m_mapId);
 }
 
 SpellValue::SpellValue(Difficulty diff, SpellInfo const* proto, Unit const* caster)

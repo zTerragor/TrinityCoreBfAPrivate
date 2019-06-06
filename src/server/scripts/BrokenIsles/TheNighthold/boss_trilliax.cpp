@@ -111,7 +111,7 @@ public:
             _EnterEvadeMode();
         }
 
-        void DoAction(int32 param)
+        void DoAction(int32 param) override
         {
             if (param == 1)
             {
@@ -122,7 +122,7 @@ public:
             }
         }
 
-        void KilledUnit(Unit* who)
+        void KilledUnit(Unit* /*who*/) override
         {
             //if (who->ToPlayer())
             //   Talk(SAY_KILL);
@@ -237,7 +237,7 @@ public:
             _EnterEvadeMode();
         }
 
-        void KilledUnit(Unit* who)
+        void KilledUnit(Unit* /*who*/) override
         {
         }
 
@@ -315,7 +315,7 @@ public:
             DoCast(223574); // visual
         }
 
-        void MovementInform(uint32 type, uint32 id)
+        void MovementInform(uint32 type, uint32 id) override
         {
             if (type != POINT_MOTION_TYPE)
                 return;
@@ -348,11 +348,11 @@ public:
             _EnterEvadeMode();
         }
 
-        void KilledUnit(Unit* who)
+        void KilledUnit(Unit* /*who*/) override
         {
         }
 
-        void JustDied(Unit* killer) override
+        void JustDied(Unit* /*killer*/) override
         {
         }
 
@@ -409,7 +409,7 @@ public:
             _EnterEvadeMode();
         }
 
-        void DoAction(int32 param)
+        void DoAction(int32 param) override
         {
             if (param == 1)
             {
@@ -417,7 +417,7 @@ public:
             }
         }
 
-        void KilledUnit(Unit* who)
+        void KilledUnit(Unit* /*who*/) override
         {
         }
 

@@ -30,9 +30,9 @@ class boss_adarogg : public CreatureScript
         {
             boss_adaroggAI(Creature* creature) : ScriptedAI(creature) { }
 
-            void Reset() { }
+            void Reset() override { }
 
-            void EnterCombat(Unit* /*who*/)
+            void EnterCombat(Unit* /*who*/) override
             {
                 events.ScheduleEvent(EVENT_FLAME_BREATH, 5000);
                 events.ScheduleEvent(EVENT_INFERNO, 15000);
@@ -44,9 +44,9 @@ class boss_adarogg : public CreatureScript
                     me->CastSpell(target, SPELL_INFERNO_CHARGE_TRIGGERED, false);
             }
 
-            void JustDied(Unit* /*killer*/) { }
+            void JustDied(Unit* /*killer*/) override { }
 
-            void UpdateAI(uint32 const diff)
+            void UpdateAI(uint32 const diff) override
             {
                 if(!UpdateVictim())
                     return;

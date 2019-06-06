@@ -424,7 +424,7 @@ class npc_kara_midnight : public CreatureScript
                 }
             }
 
-            void Reset()
+            void Reset() override
             {
                 _events.Reset();
                 _summons.DespawnAll();
@@ -458,7 +458,7 @@ class npc_kara_midnight : public CreatureScript
                 }
             }
 
-            void ExecuteEvent(uint32 eventId)
+            void ExecuteEvent(uint32 eventId) override
             {
                 switch (eventId)
                 {
@@ -559,7 +559,7 @@ class npc_kara_intagible_presence : public CreatureScript
                 me->CastSpell(me, SPELL_GHOSTLY_COSMETIC, true);
             }
 
-            void Reset()
+            void Reset() override
             {
                 _events.Reset();
                 me->CastSpell(me, SPELL_GHOST_VISUAL, true);
@@ -602,10 +602,16 @@ class npc_kara_intagible_presence : public CreatureScript
                             if (Player* ptr = ObjectAccessor::GetPlayer(*me, _passengerGUID))
                             {
                                 if (Vehicle* vec = ptr->GetVehicleKit())
+                                {
                                     if (!vec->IsVehicleInUse())
+                                    {
                                         me->EnterVehicle(ptr);
+                                    }
                                     else
+								    {
                                         me->DespawnOrUnsummon();
+                                    }
+                                }
                             }
                             break;
                         }

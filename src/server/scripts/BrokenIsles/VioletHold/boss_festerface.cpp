@@ -60,12 +60,12 @@ class boss_festerface : public CreatureScript
             boss_festerface_AI(Creature* creature) : BossAI(creature, DATA_FESTERFACE)
             {}
 
-            void Reset()
+            void Reset() override
             {
                 _Reset();
             }
 
-            void EnterCombat(Unit* /**/)
+            void EnterCombat(Unit* /**/) override
             {
                 Talk(SAY_AGGRO);
                 _EnterCombat();
@@ -91,7 +91,7 @@ class boss_festerface : public CreatureScript
                 CreatureAI::EnterEvadeMode(reason);
             }
 
-            void JustSummoned(Creature* summon)
+            void JustSummoned(Creature* summon) override
             {
                 if (!summon)
                     return;
@@ -209,7 +209,7 @@ class npc_vha_congealing_goo : public CreatureScript
                 DoCast(me, SPELL_FETID_STENCH, true);
             }
 
-            void DamageTaken(Unit* /**/, uint32 & damage)
+            void DamageTaken(Unit* /**/, uint32 & damage) override
             {
                 if (me->HealthBelowPctDamaged(5, damage))
                 {

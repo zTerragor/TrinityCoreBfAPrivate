@@ -415,7 +415,7 @@ class at_shadow_crash : public AreaTriggerEntityScript
                     unit->RemoveAurasDueToSpell(SPELL_SHADOW_CRASH_AURA);
             }
 
-            void OnRemove()
+            void OnRemove() override
             {
                 if (Unit* kaahrj = at->FindNearestCreature(101950, 250.0f, true))
                 {
@@ -454,7 +454,7 @@ class at_collapsing_shadow : public AreaTriggerEntityScript
                     unit->CastSpell(unit, SPELL_COLLAPSING_SHADOWS_DMG, true);
             }
 
-            void OnUnitExit(Unit* unit)
+            void OnUnitExit(Unit* unit) override
             {
                 if (unit)
                     unit->RemoveAurasDueToSpell(SPELL_COLLAPSING_SHADOWS_DMG);

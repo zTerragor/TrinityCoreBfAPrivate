@@ -52,13 +52,14 @@ class npc_kara_image_of_medivh : public CreatureScript
         struct npc_kara_image_of_medivh_AI : public ScriptedAI
         {
             explicit npc_kara_image_of_medivh_AI(Creature* me) : ScriptedAI(me)
-            {}
+            { }
 
-            void Reset()
+            void Reset() override
             {
                 if (me->GetInstanceScript()->GetData(DATA_NIGHTBANE_EVENT) == DONE)
                     _intro = true;
             }
+
             void DoAction(int32 action) override
             {
                 if (action == ACTION_SUMMON_NIGHTBANE)

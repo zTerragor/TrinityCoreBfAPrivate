@@ -238,7 +238,7 @@ class npc_kara_moroes_guest : public CreatureScript
                 {
                 }
 
-                void Reset()
+                void Reset() override
                 {
                     _summons.DespawnAll();
                     me->RemoveAllAreaTriggers();
@@ -323,7 +323,7 @@ class npc_kara_moroes_guest : public CreatureScript
                     }
                 }
 
-                void ExecuteEvent(uint32 eventId)
+                void ExecuteEvent(uint32 eventId) override
                 {
                     switch (eventId)
                     {
