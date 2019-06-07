@@ -2032,10 +2032,10 @@ void AuraEffect::HandleAuraTransform(AuraApplication const* aurApp, uint8 mode, 
                     uint32 model_id = 0;
 
                     // choose a model, based on trigger flag
-                    if (CreatureModel const* model = ObjectMgr::ChooseDisplayId(ci))
-                        target->SetDisplayId(model->CreatureDisplayID, model->DisplayScale);
-                    else
-                        TC_LOG_ERROR("spells", "Auras: could not choose creature display id for creature entry %u From Spell Aura Transform in Spell ID = %d", ci->Entry, GetMiscValue(), GetId());
+                    if (uint32 modelid = ObjectMgr::ChooseDisplayId(ci)->CreatureDisplayID)
+                        model_id = modelid;
+
+                    target->SetDisplayId(model_id);
 
                     // Dragonmaw Illusion (set mount model also)
                     if (GetId() == 42016 && target->GetMountID() && !target->GetAuraEffectsByType(SPELL_AURA_MOD_INCREASE_MOUNTED_FLIGHT_SPEED).empty())

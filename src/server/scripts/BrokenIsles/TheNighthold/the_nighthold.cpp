@@ -220,7 +220,7 @@ public:
     {
         npc_pulsauronAI(Creature* creature) : ScriptedAI(creature) { }
 
-        void Reset()
+        void Reset() override
         {
             me->SetReactState(REACT_PASSIVE);
             DoCastSelf(SPELL_SHIELD);

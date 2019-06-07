@@ -244,7 +244,7 @@ class npc_faceless_tendril : public CreatureScript
             {
             }
 
-            void Reset()
+            void Reset() override
             {
                 me->setActive(true);
                 me->SetReactState(REACT_AGGRESSIVE);
